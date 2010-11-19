@@ -20,7 +20,11 @@
   <h2 class="fixed">Types in Frank</h2>
 	<div class="scroll">
 		<ul><li>
+            <a href="../../../../../Frank/App.htm">App</a>
+        </li><li>
             <a href="../../../../../Frank/Core.htm" class="current">Core</a>
+        </li><li>
+            <a href="../../../../../Frank/Formatter.htm">Formatter</a>
         </li><li>
             <a href="../../../../../Frank/FrankApp.htm">FrankApp</a>
         </li><li>
@@ -39,11 +43,11 @@
 
 
 			<h3 class="section">Methods</h3>
-			<ul><li><a href="../../../../../Frank/Core.htm#appendHeader">appendHeader</a></li><li><a href="../../../../../Frank/Core.htm#appendHeaderValues">appendHeaderValues</a></li><li><a href="../../../../../Frank/Core.htm#putAsJson``1">putAsJson&lt;a&gt;</a></li><li><a href="../../../../../Frank/Core.htm#putAsXml``1">putAsXml&lt;a&gt;</a></li><li><a href="../../../../../Frank/Core.htm#putContent">putContent</a></li><li><a href="../../../../../Frank/Core.htm#putDataContract``1">putDataContract&lt;a&gt;</a></li><li><a href="../../../../../Frank/Core.htm#putHtml">putHtml</a></li><li><a href="../../../../../Frank/Core.htm#putJson">putJson</a></li><li><a href="../../../../../Frank/Core.htm#putRequest">putRequest</a></li><li><a href="../../../../../Frank/Core.htm#putResponse">putResponse</a></li><li><a href="../../../../../Frank/Core.htm#puts">puts</a></li><li><a href="../../../../../Frank/Core.htm#putSerialized``1">putSerialized&lt;a&gt;</a></li><li><a href="../../../../../Frank/Core.htm#putText">putText</a></li><li><a href="../../../../../Frank/Core.htm#putXml">putXml</a></li><li><a href="../../../../../Frank/Core.htm#redirectTo">redirectTo</a></li><li><a href="../../../../../Frank/Core.htm#run">run</a></li>
+			<ul><li><a href="../../../../../Frank/Core.htm#appendHeader">appendHeader</a></li><li><a href="../../../../../Frank/Core.htm#appendHeaderValues">appendHeaderValues</a></li><li><a href="../../../../../Frank/Core.htm#appends">appends</a></li><li><a href="../../../../../Frank/Core.htm#format``1">format&lt;a&gt;</a></li><li><a href="../../../../../Frank/Core.htm#getFormatter">getFormatter</a></li><li><a href="../../../../../Frank/Core.htm#HttpContent.ReadAsByteString">HttpContent.ReadAsByteString</a></li><li><a href="../../../../../Frank/Core.htm#putContent">putContent</a></li><li><a href="../../../../../Frank/Core.htm#putRequest">putRequest</a></li><li><a href="../../../../../Frank/Core.htm#putResponse">putResponse</a></li><li><a href="../../../../../Frank/Core.htm#puts">puts</a></li><li><a href="../../../../../Frank/Core.htm#redirectTo">redirectTo</a></li><li><a href="../../../../../Frank/Core.htm#render``1">render&lt;a&gt;</a></li>
 			</ul>
 
 			<h3 class="section">Properties</h3>
-			<ul><li><a href="../../../../../Frank/Core.htm#frank">frank</a></li><li><a href="../../../../../Frank/Core.htm#getParams">getParams</a></li><li><a href="../../../../../Frank/Core.htm#getRequest">getRequest</a></li><li><a href="../../../../../Frank/Core.htm#getResponse">getResponse</a></li>
+			<ul><li><a href="../../../../../Frank/Core.htm#frank">frank</a></li><li><a href="../../../../../Frank/Core.htm#getFormatters">getFormatters</a></li><li><a href="../../../../../Frank/Core.htm#getParams">getParams</a></li><li><a href="../../../../../Frank/Core.htm#getRequest">getRequest</a></li><li><a href="../../../../../Frank/Core.htm#getResponse">getResponse</a></li>
 			</ul>
 
 	</div>
@@ -52,7 +56,7 @@
 
 	<h3 class="section">Public static methods</h3>
 <div id="appendHeader" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>appendHeader</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> value)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>appendHeader</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> value)</h4>
 		<div class="content">Updates the state of the response headers with the specified name-value pair.
 
 
@@ -60,63 +64,55 @@
 
 		</div>
 	</div><div id="appendHeaderValues" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>appendHeaderValues</strong>(<span title="System.string">string</span> name, <span title="System.String[]">String[]</span> values)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>appendHeaderValues</strong>(<span title="System.string">string</span> name, <span title="System.String[]">String[]</span> values)</h4>
 		<div class="content">Updates the state of the response headers with the specified name-value pair.
 
 
 
 
 		</div>
-	</div><div id="putAsJson``1" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putAsJson&lt;a&gt;</strong>(<span title="Frank.a">a</span> content)</h4>
-		<div class="content">Updates the state of the response content serialized with a data contract as application/json.
+	</div><div id="appends" class="method">
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>appends</strong>(<span title="System.Collections.Generic.IEnumerable<Byte>">IEnumerable&lt;Byte&gt;</span> content)</h4>
+		<div class="content">Appends the content to the existing output.
 
 
 
 
 		</div>
-	</div><div id="putAsXml``1" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putAsXml&lt;a&gt;</strong>(<span title="Frank.a">a</span> content, <span title="System.string">string</span> contentType)</h4>
-		<div class="content">Updates the state of the response content with content object serialized as XML as the specified content type.
+	</div><div id="format``1" class="method">
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>format&lt;a&gt;</strong>(<span title="Frank.a">a</span> content)</h4>
+		<div class="content">Updates the state of the response content using the request's Accept header and available formatters.
+
+
+
+
+		</div>
+	</div><div id="getFormatter" class="method">
+		<h4><span title="FSharp.Monad.State<Tuple<string, FSharpFunc<Tuple<object, Stream, HttpRequestMessage>, Unit>>, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Tuple&lt;string, FSharpFunc&lt;Tuple&lt;object, Stream, HttpRequestMessage&gt;, Unit&gt;&gt;, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>getFormatter</strong>()</h4>
+		<div class="content">Selects a formatter using the Accept header from the request and the available formatters.
+
+
+
+
+		</div>
+	</div><div id="HttpContent.ReadAsByteString" class="method">
+		<h4><span title="System.Collections.Generic.IEnumerable<Byte>">IEnumerable&lt;Byte&gt;</span> <strong>HttpContent.ReadAsByteString</strong>(<span title="Microsoft.Http.HttpContent">HttpContent</span> )</h4>
+		<div class="content">
 
 
 
 
 		</div>
 	</div><div id="putContent" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putContent</strong>(<span title="Microsoft.Http.HttpContent">HttpContent</span> content)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>putContent</strong>(<span title="Microsoft.Http.HttpContent">HttpContent</span> content)</h4>
 		<div class="content">Updates the state of the response content.
 
 
 
 
 		</div>
-	</div><div id="putDataContract``1" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putDataContract&lt;a&gt;</strong>(<span title="Frank.a">a</span> content, <span title="System.string">string</span> contentType)</h4>
-		<div class="content">Updates the state of the response content serialized with a data contract as the specified content type.
-
-
-
-
-		</div>
-	</div><div id="putHtml" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putHtml</strong>(<span title="System.string">string</span> content)</h4>
-		<div class="content">Updates the state of the response content as text/html.
-
-
-
-
-		</div>
-	</div><div id="putJson" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putJson</strong>(<span title="System.string">string</span> content)</h4>
-		<div class="content">Updates the state of the response content as text/json.
-
-
-
-
-		</div>
 	</div><div id="putRequest" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putRequest</strong>(<span title="Microsoft.Http.HttpRequestMessage">HttpRequestMessage</span> req)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>putRequest</strong>(<span title="Microsoft.Http.HttpRequestMessage">HttpRequestMessage</span> req)</h4>
 		<div class="content">Updates the state of the request.
 
 
@@ -124,7 +120,7 @@
 
 		</div>
 	</div><div id="putResponse" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putResponse</strong>(<span title="Microsoft.Http.HttpResponseMessage">HttpResponseMessage</span> resp)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>putResponse</strong>(<span title="Microsoft.Http.HttpResponseMessage">HttpResponseMessage</span> resp)</h4>
 		<div class="content">Updates the state of the response.
 
 
@@ -132,39 +128,15 @@
 
 		</div>
 	</div><div id="puts" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>puts</strong>(<span title="System.Collections.Generic.IEnumerable<Byte>">IEnumerable&lt;Byte&gt;</span> content, <span title="System.string">string</span> contentType)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>puts</strong>(<span title="System.Collections.Generic.IEnumerable<Byte>">IEnumerable&lt;Byte&gt;</span> content, <span title="System.string">string</span> contentType)</h4>
 		<div class="content">Updates the state of the response content with the provided bytestring as the specified content type.
 
 
 
 
 		</div>
-	</div><div id="putSerialized``1" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putSerialized&lt;a&gt;</strong>(<span title="Frank.a">a</span> content, <span title="System.string">string</span> contentType, <span title="Microsoft.FSharp.Core.FSharpFunc<Tuple<MemoryStream, a>, Unit>">FSharpFunc&lt;Tuple&lt;MemoryStream, a&gt;, Unit&gt;</span> serialize)</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div><div id="putText" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putText</strong>(<span title="System.string">string</span> content)</h4>
-		<div class="content">Updates the state of the response content as text/plain.
-
-
-
-
-		</div>
-	</div><div id="putXml" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>putXml</strong>(<span title="System.Xml.Linq.XElement">XElement</span> content, <span title="System.string">string</span> contentType)</h4>
-		<div class="content">Updates the state of the response content as the specified content type.
-
-
-
-
-		</div>
 	</div><div id="redirectTo" class="method">
-		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>redirectTo</strong>(<span title="System.string">string</span> url)</h4>
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>redirectTo</strong>(<span title="System.string">string</span> url)</h4>
 		<div class="content">Updates the response state with a redirect, setting the status code to 303
 and the location header to the specified url.
 
@@ -172,9 +144,9 @@ and the location header to the specified url.
 
 
 		</div>
-	</div><div id="run" class="method">
-		<h4><span title="Microsoft.Http.HttpResponseMessage">HttpResponseMessage</span> <strong>run</strong>(<span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> h, <span title="Microsoft.Http.HttpRequestMessage">HttpRequestMessage</span> initialState_0, <span title="Microsoft.Http.HttpResponseMessage">HttpResponseMessage</span> initialState_1)</h4>
-		<div class="content">Runs a Frank handler with an initial state and returns an HttpResponseMessage.
+	</div><div id="render``1" class="method">
+		<h4><span title="FSharp.Monad.State<Unit, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;Unit, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>render&lt;a&gt;</strong>(<span title="Frank.a">a</span> _arg1)</h4>
+		<div class="content">Renders the content.
 
 
 
@@ -188,18 +160,23 @@ and the location header to the specified url.
     <div class="content">Sets an instance of StateBuilder as the computation workflow for a Frank monad.
 
     </div>
+  </div><div id="getFormatters" class="method">
+    <h4><span title="FSharp.Monad.State<IEnumerable<Formatter>, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;IEnumerable&lt;Formatter&gt;, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>getFormatters</strong> get; </h4>
+    <div class="content">Gets the current state of the formatters.
+
+    </div>
   </div><div id="getParams" class="method">
-    <h4><span title="FSharp.Monad.State<IDictionary<string, string>, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;IDictionary&lt;string, string&gt;, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>getParams</strong> get; </h4>
+    <h4><span title="FSharp.Monad.State<IDictionary<string, string>, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;IDictionary&lt;string, string&gt;, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>getParams</strong> get; </h4>
     <div class="content">Gets the current state of the parameters.
 
     </div>
   </div><div id="getRequest" class="method">
-    <h4><span title="FSharp.Monad.State<HttpRequestMessage, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;HttpRequestMessage, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>getRequest</strong> get; </h4>
+    <h4><span title="FSharp.Monad.State<HttpRequestMessage, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;HttpRequestMessage, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>getRequest</strong> get; </h4>
     <div class="content">Gets the current state of the request.
 
     </div>
   </div><div id="getResponse" class="method">
-    <h4><span title="FSharp.Monad.State<HttpResponseMessage, Tuple<HttpRequestMessage, HttpResponseMessage>>">State&lt;HttpResponseMessage, Tuple&lt;HttpRequestMessage, HttpResponseMessage&gt;&gt;</span> <strong>getResponse</strong> get; </h4>
+    <h4><span title="FSharp.Monad.State<HttpResponseMessage, Tuple<HttpRequestMessage, HttpResponseMessage, IDictionary<string, string>, IEnumerable<Formatter>>>">State&lt;HttpResponseMessage, Tuple&lt;HttpRequestMessage, HttpResponseMessage, IDictionary&lt;string, string&gt;, IEnumerable&lt;Formatter&gt;&gt;&gt;</span> <strong>getResponse</strong> get; </h4>
     <div class="content">Gets the current state of the response.
 
     </div>

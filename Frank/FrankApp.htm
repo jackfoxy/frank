@@ -20,7 +20,11 @@
   <h2 class="fixed">Types in Frank</h2>
 	<div class="scroll">
 		<ul><li>
+            <a href="../../../../../Frank/App.htm">App</a>
+        </li><li>
             <a href="../../../../../Frank/Core.htm">Core</a>
+        </li><li>
+            <a href="../../../../../Frank/Formatter.htm">Formatter</a>
         </li><li>
             <a href="../../../../../Frank/FrankApp.htm" class="current">FrankApp</a>
         </li><li>
@@ -39,59 +43,17 @@
 
 
 			<h3 class="section">Methods</h3>
-			<ul><li><a href="../../../../../Frank/FrankApp.htm#Equals">Equals</a></li><li><a href="../../../../../Frank/FrankApp.htm#GetHashCode">GetHashCode</a></li><li><a href="../../../../../Frank/FrankApp.htm#GetType">GetType</a></li><li><a href="../../../../../Frank/FrankApp.htm#init">init</a></li><li><a href="../../../../../Frank/FrankApp.htm#toFrack">toFrack</a></li><li><a href="../../../../../Frank/FrankApp.htm#ToString">ToString</a></li>
+			<ul><li><a href="../../../../../Frank/FrankApp.htm#toFrack">toFrack</a></li>
 			</ul>
 
 
 	</div>
 
 
-	<h3 class="section">Public instance methods</h3>
-<div id="Equals" class="method">
-		<h4><span title="System.bool">bool</span> <strong>Equals</strong>(<span title="System.object">object</span> obj)</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div><div id="GetHashCode" class="method">
-		<h4><span title="System.int">int</span> <strong>GetHashCode</strong>()</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div><div id="GetType" class="method">
-		<h4><span title="System.Type">Type</span> <strong>GetType</strong>()</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div><div id="ToString" class="method">
-		<h4><span title="System.string">string</span> <strong>ToString</strong>()</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div>
 
 	<h3 class="section">Public static methods</h3>
-<div id="init" class="method">
-		<h4><span title="System.Func<HttpRequestMessage, HttpResponseMessage>">Func&lt;HttpRequestMessage, HttpResponseMessage&gt;</span> <strong>init</strong>(<span title="System.Collections.Generic.IEnumerable<Route>">IEnumerable&lt;Route&gt;</span> routes)</h4>
-		<div class="content">Initializes a Frank application with the specified sequence of routes.
-
-
-
-
-		</div>
-	</div><div id="toFrack" class="method">
-		<h4><span title="System.Tuple<int, IDictionary<string, string>, IEnumerable<Byte>>">Tuple&lt;int, IDictionary&lt;string, string&gt;, IEnumerable&lt;Byte&gt;&gt;</span> <strong>toFrack</strong>(<span title="System.Func<HttpRequestMessage, HttpResponseMessage>">Func&lt;HttpRequestMessage, HttpResponseMessage&gt;</span> app, <span title="System.Collections.Generic.IDictionary<string, Value>">IDictionary&lt;string, Value&gt;</span> env)</h4>
+<div id="toFrack" class="method">
+		<h4><span title="System.Tuple<int, IDictionary<string, string>, IEnumerable<Byte>>">Tuple&lt;int, IDictionary&lt;string, string&gt;, IEnumerable&lt;Byte&gt;&gt;</span> <strong>toFrack</strong>(<a href="../../../../../Frank/App.htm">App</a> app, <span title="System.Collections.Generic.IDictionary<string, Value>">IDictionary&lt;string, Value&gt;</span> env)</h4>
 		<div class="content">Converts a Frank application into a Frack application.
 
 
